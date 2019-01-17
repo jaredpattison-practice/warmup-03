@@ -1,20 +1,16 @@
-'use strict';
+let Stack = require('./stacks-and-queues.js');
 
-const Stack = require('./stacks-and-queues.js');
+let stack = new Stack();
+stack.push(2);
+stack.push(4);
+stack.push(6);
+stack.push(8);
+stack.push(10);
 
-let newStack = new Stack();
-
-newStack.push(1);
-newStack.push(2);
-newStack.push(7);
-newStack.push(9);
-newStack.pop();
-function processStack(stack) {
-  while(stack.top) {
+function clear(stack) {
+  while(stack.peek()) { 
     console.log(stack.pop());
   }
 }
 
-processStack(newStack);
-
-// console.log(newStack.top);
+clear(stack);
