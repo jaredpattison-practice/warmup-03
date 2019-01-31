@@ -1,4 +1,4 @@
-let Stack = require('./stacks-and-queues.js');
+let Stack = require('./stack.js');
 
 let stack = new Stack();
 stack.push(2);

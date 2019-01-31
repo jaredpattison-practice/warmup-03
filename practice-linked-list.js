@@ -14,4 +14,12 @@ function traverse(ll) {
   }
 }
 
+function traverse(ll) {
+  let current = list.head;
+  while(current.next) {
+    console.log(current.value);
+    current = current.next;
+  }
+}
+
 traverse(list);

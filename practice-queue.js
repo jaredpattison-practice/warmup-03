@@ -1,6 +1,6 @@
 'use strict';
 
-const Queue = require('./stacks-and-queues.js');
+const Queue = require('./queue.js');
 
 let newQueue = new Queue();
 
