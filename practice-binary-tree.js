@@ -2,7 +2,7 @@
 
 let {BinaryTree,Node} = require('./binary-tree.js');
 
-function breadthFirtst(tree) {
+function breadthFirst(tree) {
   if(tree.root === null) {
     return null;
   }
@@ -100,7 +100,7 @@ seven.right = nine;
 
 const testTree = new BinaryTree(one);
 
-console.log(breadthFirtst(testTree));
+console.log(breadthFirst(testTree));
 console.log(preOrder(testTree));
 console.log(inOrder(testTree));
 console.log(postOrder(testTree));
