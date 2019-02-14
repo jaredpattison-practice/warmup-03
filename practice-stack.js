@@ -1,4 +1,4 @@
-let Stack = require('./stacks-and-queues.js');
+let Stack = require('./lib/stack.js');
 
 let stack = new Stack();
 stack.push(2);
@@ -8,7 +8,7 @@ stack.push(8);
 stack.push(10);
 
 function clear(stack) {
-  while(stack.peek()) { 
+  while(stack.peek()) {
     console.log(stack.pop());
   }
 }
