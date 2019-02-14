@@ -1,19 +1,19 @@
-'use strict';
+let Queue = require("./lib/queue.js");
 
-const Queue = require('./queue.js');
+let q = new Queue();
+q.enqueue(2);
+q.enqueue(4);
+q.enqueue(6);
+q.enqueue(8);
+q.enqueue(10);
 
-let newQueue = new Queue();
-
-newQueue.enqueue(1);
-newQueue.enqueue(2);
-newQueue.enqueue(7);
-newQueue.enqueue(4);
-
-function dequeueAndPrint(queue){
-
-  while (queue.front){
-    console.log(queue.dequeue());
+function traverse(queue) {
+  while(i = queue.dequeue()) {
+    console.log(i);
   }
+  // while(queue.peek()) {
+  //   console.log(queue.dequeue());
+  // }
 }
 
-dequeueAndPrint(newQueue);
+traverse(q);

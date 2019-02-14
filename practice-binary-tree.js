@@ -1,48 +1,25 @@
-'use strict';
-
-let {BinaryTree,Node} = require('./binary-tree.js');
-
-function breadthFirst(tree) {
-  if(tree.root === null) {
-    return null;
-  }
-  let q = [tree.root];
-  let res = [];
-  while (q.length > 0) {
-    let c = q[0];
-
-    if(c.left !== null) {
-      q.push(c.left);
-    }
-    if(c.right !== null) {
-      q.push(c.right);
-    }
-    res.push(q.shift().value);
-  }
-  return res;
-}
+let {BinaryTree, Node} = require('./lib/binary-tree.js');
 
 function preOrder(tree) {
 
-  let results= [];
+  let results = [];
 
   let _walk = (node) => {
     results.push(node.value);
     if(node.left) _walk(node.left);
     if(node.right) _walk(node.right);
-    
   };
   _walk(tree.root);
 
   return results;
 }
- 
+
 function postOrder(tree) {
   let results = [];
 
   let _walk = (node) => {
     if(node.left) _walk(node.left);
-    if(node.right) _walk(node.right);
+    if(node.right)  _walk(node.right);
     results.push(node.value);
   };
   _walk(tree.root);
@@ -51,7 +28,7 @@ function postOrder(tree) {
 }
 
 function inOrder(tree) {
-  let  results = [];
+  let results = [];
 
   let _walk = (node) => {
     if(node.left) _walk(node.left);
@@ -61,7 +38,7 @@ function inOrder(tree) {
   _walk(tree.root);
 
   return results;
-}
+} 
 
 function levelOrder(tree) {
   let results = [];
@@ -75,9 +52,8 @@ function levelOrder(tree) {
     if(current.left) nodeQueue.push(current.left);
     if(current.right) nodeQueue.push(current.right);
   }
-
   return results;
-};
+}
 
 let one = new Node(1);
 let two = new Node(2);
@@ -88,6 +64,7 @@ let six = new Node(6);
 let seven = new Node(7);
 let eight = new Node(8);
 let nine = new Node(9);
+let ten = new Node(10);
 
 one.left = two;
 one.right = three;
@@ -97,10 +74,10 @@ two.left = six;
 six.right = seven;
 seven.left = eight;
 seven.right = nine;
+nine.right = ten;
 
 const testTree = new BinaryTree(one);
 
-console.log(breadthFirst(testTree));
 console.log(preOrder(testTree));
 console.log(inOrder(testTree));
 console.log(postOrder(testTree));
